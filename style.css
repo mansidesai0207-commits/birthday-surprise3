@@ -1,0 +1,352 @@
+
+/* ==============================
+   BASIC RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #4b0509;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==============================
+   MAIN PAGE
+============================== */
+
+.page {
+    position: relative;
+
+    width: min(100vw, calc(100dvh * 1366 / 768));
+
+    aspect-ratio: 1366 / 768;
+
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+
+/* ==============================
+   CANVA BACKGROUND IMAGE
+============================== */
+
+.design {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: fill;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ==============================
+   PASSWORD INDICATORS
+============================== */
+
+.dots {
+    position: absolute;
+
+    left: 45.6%;
+    top: 24.4%;
+
+    width: 10%;
+    height: 4%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+.dot {
+    width: 18%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    background: transparent;
+    border: 2px solid #fff0df;
+
+    transition: background 0.2s ease;
+}
+
+.dot.filled {
+    background: #740f1b;
+    border-color: #fff0df;
+}
+
+
+/* ==============================
+   NUMBER KEYPAD
+============================== */
+
+.keypad {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    z-index: 4;
+}
+
+/* All number buttons */
+
+.keypad button {
+    position: absolute;
+
+    width: 6%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    transition: transform 0.15s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove unwanted hover background */
+
+.keypad button:hover {
+    background: transparent;
+}
+
+/* Click animation */
+
+.keypad button:active {
+    transform: translate(-50%, -50%) scale(0.90);
+}
+
+
+/* ==============================
+   FIRST ROW: 1, 2, 3
+============================== */
+
+.keypad button:nth-child(1) {
+    left: 40.42%;
+    top: 38.36%;
+}
+
+.keypad button:nth-child(2) {
+    left: 50.04%;
+    top: 38.36%;
+}
+
+.keypad button:nth-child(3) {
+    left: 59.67%;
+    top: 38.36%;
+}
+
+
+/* ==============================
+   SECOND ROW: 4, 5, 6
+============================== */
+
+.keypad button:nth-child(4) {
+    left: 40.42%;
+    top: 55.19%;
+}
+
+.keypad button:nth-child(5) {
+    left: 50.04%;
+    top: 55.19%;
+}
+
+.keypad button:nth-child(6) {
+    left: 59.67%;
+    top: 55.19%;
+}
+
+
+/* ==============================
+   THIRD ROW: 7, 8, 9
+============================== */
+
+.keypad button:nth-child(7) {
+    left: 40.42%;
+    top: 72.48%;
+}
+
+.keypad button:nth-child(8) {
+    left: 50.04%;
+    top: 72.48%;
+}
+
+.keypad button:nth-child(9) {
+    left: 59.67%;
+    top: 72.48%;
+}
+
+
+/* ==============================
+   ENTER BUTTON
+============================== */
+
+.enter-button {
+    position: absolute;
+
+    left: 41.5%;
+    top: 81.2%;
+
+    width: 18%;
+    height: 11%;
+
+    border: none;
+    border-radius: 50px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.enter-button:hover {
+    background: transparent;
+}
+
+.enter-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ==============================
+   MESSAGE
+============================== */
+
+.message {
+    position: absolute;
+
+    top: 93%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #fff0df;
+
+    font-family: cursive;
+    font-size: clamp(10px, 1.2vw, 16px);
+
+    z-index: 6;
+}
+
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* ==============================
+   MOBILE SCREEN
+============================== */
+
+@media (max-width: 600px) {
+
+    .dot {
+        border-width: 1px;
+    }
+
+    .keypad button {
+        width: 6%;
+    }
+
+}
+
+
+/* RESPONSIVE PHONE AND TABLET SUPPORT */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+        min-height: 100dvh;
+        overflow: hidden;
+    }
+
+    .page {
+        width: min(100vw, calc(100dvh * 1366 / 768));
+        flex-shrink: 0;
+    }
+
+    .keypad button {
+        width: 6%;
+        min-width: 0;
+    }
+
+    .enter-button {
+        width: 18%;
+        height: 11%;
+    }
+
+    .dots {
+        width: 10%;
+    }
+
+    .message {
+        font-size: clamp(8px, 2vw, 14px);
+    }
+}
+
+/* Phone in landscape orientation */
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+
+    .page {
+        width: min(100vw, calc(100dvh * 1366 / 768));
+    }
+}

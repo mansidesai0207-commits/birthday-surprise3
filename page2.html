@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise ❤️</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- PAGE 2: MAKE A WISH -->
+
+        <section id="page2Screen" class="screen active">
+
+            <img
+                src="page2.png"
+                class="design"
+                id="burningImage"
+                alt="Burning birthday candle"
+            >
+
+            <img
+                src="page2-blown.png"
+                class="design"
+                id="blownImage"
+                alt="Blown out birthday candle"
+                style="display:none;"
+            >
+
+            <div class="countdown" id="countdown"></div>
+
+            <button id="nextButton" class="next-button">
+                NEXT →
+            </button>
+
+        </section>
+
+
+        <!-- PAGE 3: BIRTHDAY SCRAPBOOK -->
+
+        <section id="page3Screen" class="screen">
+
+            <img
+                src="page3.png"
+                class="design"
+                alt="Birthday scrapbook"
+            >
+
+            <!-- PAGE 3 NEXT BUTTON -->
+
+            <button
+                id="envelopePageButton"
+                class="next-button">
+                NEXT →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- BIRTHDAY MUSIC -->
+
+    <audio
+        id="birthdayMusic"
+        src="birthday-music.mp3"
+        preload="auto"
+    ></audio>
+
+
+    <script src="page2.js"></script>
+
+</body>
+</html>
